@@ -1,6 +1,7 @@
 # CMAP Trip-based model tools
 
-__version__ = '21.01.1'
-
+from importlib.metadata import version
 from .cmap_logging import *
 from .numexpr_patch import CacheDictSafe
+
+__version__ = version(__name__)
