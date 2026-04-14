@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=80", "setuptools-scm[simple]>=9.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cmap_modedest"
+description = "Mode-destination choice submodel for CMAP trip-based travel demand model"
+readme = "README.md"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pandas",
+    "addict>=2.2",
+    "larch",
+    "sharrow @ git+https://github.com/CMAP-REPOS/cmap_modedest#subdirectory=sharrow"
+]
+dynamic = ["version"]
+
+[project.urls]
+Repository = "https://github.com/CMAP-REPOS/cmap_modedest"
+
+[project.scripts]
+cmap_modedest = "cmap_modedest.__main__:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
