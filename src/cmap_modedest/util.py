@@ -37,7 +37,7 @@ class MemoryUsage:
 		self.max_memory_history = [0,]
 		self.pid = os.getpid()  # the current process identifier, to track memory usage
 		if psutil is None:
-			raise ModuleNotFoundError("pstil")
+			raise ModuleNotFoundError("psutil")
 		self.check()
 
 	def check(self, silent=False, gc=False, time_checkpoint=None):
